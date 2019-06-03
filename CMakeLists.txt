@@ -14,6 +14,7 @@ message("${CODAL_FIELDS} ${TMP_RES}")
 
 # if no ble is not defined, softdevice should be linked
 if ("${TMP_RES}" EQUAL "-1")
+    message("${BoldMagenta}Linking without Bluetooth.${ColourReset}")
     set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -T\"${CMAKE_CURRENT_LIST_DIR}/ld/nrf52832.ld\"" PARENT_SCOPE)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T\"${CMAKE_CURRENT_LIST_DIR}/ld/nrf52832.ld\"" PARENT_SCOPE)
 else()
